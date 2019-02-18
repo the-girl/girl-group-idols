@@ -27,7 +27,8 @@ export class IdolDetailComponent implements OnInit {
 
   getIdol(): void {
     const id = +this.router.snapshot.paramMap.get('id');
-    this.idol = this.idolService.getIdol(id);
+    this.idolService.getIdol(id)
+        .subscribe(idol => this.idol = idol);
   }
 
   onBack(): void {

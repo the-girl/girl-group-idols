@@ -18,6 +18,7 @@ export class IdolsComponent implements OnInit {
   }
 
   getIdols(): void {
-    this.idols = this.idolService.getIdols();
+    this.idolService.getIdols()
+        .subscribe(idols => this.idols = idols);
   }
 }
