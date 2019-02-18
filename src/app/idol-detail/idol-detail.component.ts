@@ -31,6 +31,11 @@ export class IdolDetailComponent implements OnInit {
         .subscribe(idol => this.idol = idol);
   }
 
+  onSave(): void {
+    this.idolService.updateIdol(this.idol)
+        .subscribe(() => this.onBack());
+  }
+
   onBack(): void {
     this.location.back();
   }

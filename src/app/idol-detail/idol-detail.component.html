@@ -3,7 +3,7 @@
     idol-detail works!
   </p>
 
-  <form>
+  <form *ngIf="idol">
     <div class="form-group">
       <label for="staticId" class="col-form-label">ID</label>
       <div class="col-sm-10">
@@ -17,4 +17,5 @@
     </div>
   </form>
   <button class="btn btn-outline-primary" (click)="onBack()">Back</button>
+  <button class="btn btn-outline-primary" (click)="onSave()">Save</button>
 </div>
