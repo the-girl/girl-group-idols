@@ -5,4 +5,5 @@ export class Idol {
   weight?: number;
   company?: string;
   group?: string;
+  imageUrl?: string;
 }
