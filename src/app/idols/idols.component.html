@@ -2,4 +2,22 @@
   <p>
     idols works!
   </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">fn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let idol of idols">
+        <th scope="row">{{ idol.id }}</th>
+        <td>{{ idol.name }}</td>
+        <td>
+          <a routerLink="/idols/{{idol.id}}" class="btn btn-primary btn-sm">Detail</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

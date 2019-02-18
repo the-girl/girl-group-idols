@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IdolService } from '../idol.service';
+import { Idol } from '../idol';
 
 @Component({
   selector: 'app-idols',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdolsComponent implements OnInit {
 
-  constructor() { }
+  idols: Idol[];
+
+  constructor(private idolService: IdolService) { }
 
   ngOnInit() {
+    this.getIdols();
   }
 
+  getIdols(): void {
+    this.idols = this.idolService.getIdols();
+  }
 }
