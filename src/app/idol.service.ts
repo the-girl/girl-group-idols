@@ -48,6 +48,14 @@ export class IdolService {
       );
   }
 
+  addIdol(idol: Idol): Observable<Idol> {
+    return this.http.post<Idol>(this.idolsUrl, idol, httpOptions)
+      .pipe(
+        tap((idol: Idol) => this.log(`added idol \w id=${idol.id}`)),
+        catchError(this.handleError<Idol>('addIdol'))
+      );
+  }
+
   private log(message: string): void {
     this.messageService.add(`IdolServie: ${message}`);
   }

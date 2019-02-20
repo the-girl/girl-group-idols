@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { IdolService } from '../idol.service';
 import { Idol } from '../idol';
 
@@ -20,5 +21,11 @@ export class IdolsComponent implements OnInit {
   getIdols(): void {
     this.idolService.getIdols()
         .subscribe(idols => this.idols = idols);
+  }
+
+  onAdd(name: string, imageUrl: string): void {
+    this.idolService.addIdol({ name, imageUrl } as Idol)
+        .subscribe(idol => this.idols.push(idol));
+    //
   }
 }
